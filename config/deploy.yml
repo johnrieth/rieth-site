@@ -7,7 +7,7 @@ image: ghcr.io/johnrieth/rieth_site
 # Deploy to these servers.
 servers:
   web:
-    - 5.78.45.227
+    - rieth-server
 
 # Enable SSL auto certification via Let's Encrypt and allow for multiple apps on a single web server.
 proxy:
@@ -51,5 +51,5 @@ ssh:
 # Configure the image builder - use your server as builder
 builder:
   arch: amd64
-  remote: ssh://deploy@5.78.45.227
+  remote: ssh://rieth-server
   local: false
