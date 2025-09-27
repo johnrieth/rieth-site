@@ -30,7 +30,8 @@ env:
   clear:
     # Run the Solid Queue Supervisor inside the web server's Puma process to do jobs.
     SOLID_QUEUE_IN_PUMA: true
-    ATABASE_URL: postgres://postgres:$(POSTGRES_PASSWORD)@rieth-site-db:5432/rieth_site_production
+    RAILS_ENV: production
+    DATABASE_URL: postgres://postgres:$(POSTGRES_PASSWORD)@rieth-site-db:5432/rieth_site_production
 
 # Aliases for common commands
 aliases:
@@ -59,7 +60,7 @@ builder:
 accessories:
   db:
     image: postgres:16
-    host: 5.78.45.227
+    host: rieth-server
     port: "127.0.0.1:5432:5432"
     env:
       clear:
