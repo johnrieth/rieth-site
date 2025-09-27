@@ -70,7 +70,6 @@ accessories:
     env:
       clear:
         POSTGRES_DB: rieth_site_production
-        
       secret:
         - POSTGRES_PASSWORD
     directories:
