@@ -32,13 +32,11 @@ env:
     # Run the Solid Queue Supervisor inside the web server's Puma process to do jobs.
     SOLID_QUEUE_IN_PUMA: true
     RAILS_ENV: production
-    
-    PGHOST: rieth_site-db
-    PGPORT: "5432"
-    PGUSER: postgres
-    PGDATABASE: rieth_site_production
-    # PGPASSWORD should come from the secret POSTGRES_PASSWORD above
-    PGPASSWORD: ${POSTGRES_PASSWORD}   
+    DB_HOST: rieth_site-db
+    DB_USER: postgres
+    DB_NAME: rieth_site_production
+    DB_PORT: "5432"
+  # PGPASSWORD is provided from the secret POSTGRES_PASSWORD (see .kamal/secrets)
 
 # Aliases for common commands
 aliases:
@@ -72,6 +70,7 @@ accessories:
     env:
       clear:
         POSTGRES_DB: rieth_site_production
+        
       secret:
         - POSTGRES_PASSWORD
     directories:

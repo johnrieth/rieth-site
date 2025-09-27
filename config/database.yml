@@ -81,7 +81,12 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    url: <%= ENV["DATABASE_URL"] %>
+
+    host: <%= ENV["DB_HOST"] %>
+    database: <%= ENV["DB_NAME"] %>
+    username: <%= ENV["DB_USER"] %>
+    password: <%= ENV["POSTGRES_PASSWORD"] %>
+    port: <%= ENV["DB_PORT"] %>
   cache:
     <<: *primary_production
     database: rieth_site_production_cache
