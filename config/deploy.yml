@@ -25,13 +25,20 @@ registry:
 # Inject ENV variables into containers (secrets come from .kamal/secrets).
 env:
   secret:
+    - KAMAL_REGISTRY_PASSWORD
     - RAILS_MASTER_KEY
-    - DATABASE_URL
+    - POSTGRES_PASSWORD
   clear:
     # Run the Solid Queue Supervisor inside the web server's Puma process to do jobs.
     SOLID_QUEUE_IN_PUMA: true
     RAILS_ENV: production
-   
+    
+    PGHOST: rieth_site-db
+    PGPORT: "5432"
+    PGUSER: postgres
+    PGDATABASE: rieth_site_production
+    # PGPASSWORD should come from the secret POSTGRES_PASSWORD above
+    PGPASSWORD: ${POSTGRES_PASSWORD}   
 
 # Aliases for common commands
 aliases:
