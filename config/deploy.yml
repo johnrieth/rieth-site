@@ -26,7 +26,6 @@ registry:
 env:
   secret:
     - RAILS_MASTER_KEY
-    - POSTGRES_PASSWORD
     - DATABASE_URL
   clear:
     # Run the Solid Queue Supervisor inside the web server's Puma process to do jobs.
