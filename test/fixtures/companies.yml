@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  ticker: MyString
+  current_revenue: 9.99
+  previous_revenue: 9.99
+  milestone_crossed_at: 2025-10-12
+  milestone_amount: 1
+
+two:
+  name: MyString
+  ticker: MyString
+  current_revenue: 9.99
+  previous_revenue: 9.99
+  milestone_crossed_at: 2025-10-12
+  milestone_amount: 1

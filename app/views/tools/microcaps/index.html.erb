@@ -1,0 +1,32 @@
+<div class="microcaps-container">
+  <div class="microcaps-header">
+    <h1>Microcap Revenue Milestones</h1>
+    <p>Track companies as they cross major revenue thresholds</p>
+  </div>
+
+  <div class="milestone-list">
+    <% @companies.each do |company| %>
+      <div class="milestone-item">
+        <div class="milestone-header">
+          <div>
+            <div class="company-name"><%= company.name %></div>
+            <div class="ticker"><%= company.ticker %></div>
+          </div>
+          <div class="milestone-badge">
+            $<%= company.milestone_amount %>M Milestone
+          </div>
+        </div>
+        
+        <div class="revenue-info">
+          Revenue: <strong>$<%= company.current_revenue %>M</strong> 
+          (was $<%= company.previous_revenue %>M) - 
+          <span class="growth">+$<%= growth_amount(company) %>M (<%= growth_percentage(company) %>% growth)</span>
+        </div>
+        
+        <div class="date">
+          Crossed milestone on <%= company.milestone_crossed_at.strftime("%B %d, %Y") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
